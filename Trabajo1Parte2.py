@@ -91,7 +91,7 @@ def suma(num1, num2, n):
 
 def comparar(n1, n2):
     if len(n1) < len(n2):
-        return 1
+        return -1
     elif len(n1) == len(n2):
         for i in range(len(n1)):
             if n1[i] < n2[i]:
@@ -100,7 +100,7 @@ def comparar(n1, n2):
                 return -1
         return 0
     else:
-        return -1
+        return 1
 
 
 def resta(num1, num2, n):
@@ -115,8 +115,7 @@ def resta(num1, num2, n):
     n2.reverse()
     if comparar(n1, n2) < 0:
         signo = True
-        print("menor")
-        for i in range(len(n2)):
+        for i in range(len(n1)):
             if acarreo != 0:
                 n2[i] -= acarreo
                 acarreo = 0
@@ -125,8 +124,18 @@ def resta(num1, num2, n):
                 acarreo += 1
             else:
                 solucion.append(n2[i] - n1[i])
+        if len(n2) != len(n1):
+            i = len(n1)
+            while i < len(n2):
+                if acarreo != 0:
+                    n2[i] = n2[i] - acarreo
+                    acarreo = 0
+                if n2[i] > n:
+                    n2[i] = n2[i] % n
+                    acarreo = int(n2[i] / n)
+                solucion.append(n2[i])
+                i += 1
     elif comparar(n1, n2) > 0:
-        print("mayor")
         for i in range(len(n2)):
             if acarreo != 0:
                 n1[i] -= acarreo
@@ -136,6 +145,17 @@ def resta(num1, num2, n):
                 acarreo += 1
             else:
                 solucion.append(n1[i] - n2[i])
+        if len(n1) != len(n2):
+            i = len(n2)
+            while i < len(n1):
+                if acarreo != 0:
+                    n1[i] = n1[i] - acarreo
+                    acarreo = 0
+                if n1[i] > n:
+                    n1[i] = n1[i] % n
+                    acarreo = int(n1[i] / n)
+                solucion.append(n1[i])
+                i += 1
     else:
         return "0"
     sol = ""
@@ -147,7 +167,6 @@ def resta(num1, num2, n):
     if signo == True:
         sol = "-" + sol
     return sol
-
 
 print("Primer trabajo de Arquitectura de Computadores: Parte 2")
 print("Programa que suma o resta dos numeros hexdecimales\n")
