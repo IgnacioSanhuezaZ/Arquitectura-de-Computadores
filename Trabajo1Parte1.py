@@ -78,7 +78,8 @@ def verificar_dec(num):
             return nu
     return num
 
-
+print("Primer trabajo de Arquitectura de Computadores: Parte 1")
+print("Programa que transofrma numeros de base decimal o hexadecimal a binario, octal y a decimal (siendo hexadecimal) o hexadecimal (siendo decimal)\n")
 op = int(input("Ingrese la base del numero a ingresar (10,16) : "))
 while op != 10 and op != 16:
     op = input("La opcion ingresada no es valida, ingrese una base 10 o 16 (10,16) : ")
