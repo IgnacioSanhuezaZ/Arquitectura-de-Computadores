@@ -1,3 +1,9 @@
+//**Profesor: Juan Cubillos
+Asignaruta: Arquitectura de Computadores
+Alumnos: - Javier Gómes
+         - Ignacio Sanhueza
+Python 3.7
+**/
 def hex_to_dec(num):
     aux = len(num) - 1
     hex = {"A": 10, "B": 11, "C": 12, "D": 13, "E": 14, "F": 15}
