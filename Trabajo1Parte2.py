@@ -171,7 +171,7 @@ def resta(num1, num2, n):
 print("Primer trabajo de Arquitectura de Computadores: Parte 2")
 print("Programa que suma o resta dos numeros hexdecimales\n")
 
-op = int(input("1- sumar dos numeros hexadecimales\n2- restar dos numeros hexadecimales\nIngrese la opcion a realizar: "))
+op = int(input("1- sumar dos numeros hexadecimales\n2- restar dos numeros hexadecimales (el primero menos el segundo)\nIngrese la opcion a realizar: "))
 while op != 1 and op != 2:
     op = input("La opcion ingresada no es valida, ingrese la opcion 1 o 2 : ")
     if op != 10 and op != 16:
@@ -179,6 +179,8 @@ while op != 1 and op != 2:
 num1 = verificar_hex(input("Ingrese el primer numero: "))
 num2 = verificar_hex(input("Ingrese el segundo numero: "))
 if op == 1:
-    print(num1 + "\n" + num2 + "\n+ --------------------------\n" + suma(num1,num1, 16))
+    print(num1 + "\n" + num2 + "\n+ --------------------------\n" + suma(num1,num2, 16))
+elif op == 2:
+    print(num1 + "\n" + num2 + "\n- --------------------------\n" + resta(num1,num2, 16))
 else:
-    print(num1 + "\n" + num2 + "\n- --------------------------\n" + resta(num1,num1, 16))
+    print("Error de opcion: escoja una opcion valida")
