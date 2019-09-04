@@ -1,9 +1,9 @@
-//**Profesor: Juan Cubillos
-Asignaruta: Arquitectura de Computadores
-Alumnos: - Javier Gómes
-         - Ignacio Sanhueza
+""" Profesor: Juan Cubillos
+    Asignaruta: Arquitectura de Computadores
+    Alumnos: - Javier Gómes
+             - Ignacio Sanhueza
 Python 3.7
-**/
+"""
 
 def dec_to_r(num, n):
     hex = {10: "A", 11: "B", 12: "C", 13: "D", 14: "E", 15: "F"}
